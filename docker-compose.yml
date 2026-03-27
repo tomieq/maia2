@@ -1,5 +1,8 @@
 version: "3.8"
 
+networks:
+  home-network:
+    name: home-network
 services:
   maia2:
     build:
@@ -8,6 +11,8 @@ services:
     image: maia2-rest:latest
     ports:
       - "8095:8080"
+    networks:
+      - home-network
     restart: unless-stopped
     # Optional: mount local model folder for easier updates during development.
     # Remove or comment out the volume line if you prefer the models baked into the image.
