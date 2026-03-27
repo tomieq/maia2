@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  maia2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: maia2-rest:latest
+    ports:
+      - "8085:8080"
+    restart: unless-stopped
+    # Optional: mount local model folder for easier updates during development.
+    # Remove or comment out the volume line if you prefer the models baked into the image.
+    volumes:
+      - ./maia2_models:/app/maia2_models:ro
+    environment:
+      - PYTHONUNBUFFERED=1
+    # Use a single process by default; adjust command if you want more workers
+    command: ["uvicorn", "maia2.rest:app", "--host", "0.0.0.0", "--port", "8080", "--workers", "1"]
