@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     image: maia2-rest:latest
     ports:
-      - "8085:8080"
+      - "8095:8080"
     restart: unless-stopped
     # Optional: mount local model folder for easier updates during development.
     # Remove or comment out the volume line if you prefer the models baked into the image.
