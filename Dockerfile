@@ -17,7 +17,7 @@ RUN python -m pip install --upgrade pip setuptools wheel \
 RUN pip install maia2
 # Copy the application code and model files into the image.
 # This includes maia2/ and maia2_models/ (config + rapid_model.pt)
-COPY maia2/*.py /app
+COPY maia2/ /app/maia2
 
 # Expose the REST port
 EXPOSE 8080

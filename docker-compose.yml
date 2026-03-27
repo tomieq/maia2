@@ -5,10 +5,11 @@ networks:
     name: home-network
 services:
   maia2:
+    container_name: maia2-rest
     build:
       context: .
       dockerfile: Dockerfile
-    image: maia2-rest:latest
+    image: maia2-rest:1.0.0
     ports:
       - "8095:8080"
     networks:
