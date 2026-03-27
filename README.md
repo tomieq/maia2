@@ -1,3 +1,14 @@
+# Model
+```
+cd maia2_models
+cat model.part.* > rapid_model.pt
+```
+Dzielenie:
+```
+cd maia2_models
+split -b 40M rapid_model.pt model.part.
+```
+
 # Maia2: A Unified Model for Human-AI Alignment in Chess
 
 The official implementation of the NeurIPS 2024 paper **Maia-2** [[paper](https://arxiv.org/abs/2409.20553)]. This work was led by [CSSLab](https://csslab.cs.toronto.edu/) at the University of Toronto.
