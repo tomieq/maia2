@@ -14,7 +14,7 @@ RUN apt-get update && rm -rf /var/lib/apt/lists/*
 COPY maia2/requirements.txt /app/requirements.txt
 RUN python -m pip install --upgrade pip setuptools wheel \
     && pip install -r /app/requirements.txt
-
+RUN pip install maia2
 # Copy the application code and model files into the image.
 # This includes maia2/ and maia2_models/ (config + rapid_model.pt)
 COPY maia2/*.py /app
